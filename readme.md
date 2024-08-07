@@ -2,6 +2,7 @@
 
 本项目实现了一个基于视觉Transformer（ViT）模型的手势识别系统，结合OpenCV进行视频处理，并使用PyQt5创建图形用户界面（GUI）。  
 This project implements a hand gesture recognition system based on the Vision Transformer (ViT) model, using OpenCV for video processing and PyQt5 for creating a graphical user interface (GUI).
+![alt text](/src/image-1.png)
 
 ## 特点 Features
 
@@ -34,13 +35,14 @@ This project implements a hand gesture recognition system based on the Vision Tr
    ```
 
 3. **下载预训练模型** Download the pre-trained model:
-   请确保预训练的手势识别模型位于`./hand-gestures`目录中。你可以从[Hugging Face模型库](https://huggingface.co/dima806/hand_gestures_image_detection/tree/main)下载该模型。  
-   Ensure the pre-trained hand gesture recognition model is located in the `./hand-gestures` directory. You can download the model from the [Hugging Face Model Hub](https://huggingface.co/dima806/hand_gestures_image_detection/tree/main).
+   请确保预训练的手势识别模型位于`./handmodels`目录中。你可以从[Hugging Face模型库](https://huggingface.co/dima806/hand_gestures_image_detection/tree/main)下载该模型。  
+   Ensure the pre-trained hand gesture recognition model is located in the `./handmodels` directory. You can download the model from the [Hugging Face Model Hub](https://huggingface.co/dima806/hand_gestures_image_detection/tree/main).
      ```bash
      config.json
      model.safetensors
      preprocessor_config.json
    ```
+   ![alt text](/src/image.png)
 
 ## 使用方法 Usage
 
@@ -75,7 +77,7 @@ from PyQt5.QtCore import Qt, QTimer
 ### 加载预训练的模型和处理器 Load the pre-trained model and processor
 
 ```python
-model_name = "./hand-gestures"  # 确保路径正确 Ensure the path is correct
+model_name = "./handmodels"  # 确保路径正确 Ensure the path is correct
 model = AutoModelForImageClassification.from_pretrained(model_name)
 processor = ViTImageProcessor.from_pretrained(model_name)
 ```

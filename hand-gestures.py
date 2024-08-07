@@ -5,10 +5,10 @@ from transformers import AutoModelForImageClassification, ViTImageProcessor
 import threading
 import time
 from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt,QTimer
 
 # 加载预训练的模型和特征提取器
-model_name = "./hand-gestures"  # 确保路径正确
+model_name = "./handmodels"  # 确保路径正确
 model = AutoModelForImageClassification.from_pretrained(model_name)
 processor = ViTImageProcessor.from_pretrained(model_name)
 
